@@ -27,9 +27,3 @@ int my_compare_string(const char* str1, const char* str2)
 
     return ch1 > ch2 ? 1 : -1;
 }
-/*
-char* my_strcat(char* dest, const char* src)
-{
-    
-}
-*/

@@ -1,5 +1,4 @@
-#include <stdio.h>
-#include "my_string.h"
+#include "my_compare_string.h"
 
 int my_tolower(char ch);
 

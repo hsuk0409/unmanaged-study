@@ -12,5 +12,6 @@ void print_node(const node_t* head);
 void destroy(node_t* head);
 void insert_front(node_t** phead, int val);
 void insert_sorted(node_t** phead, int val);
+void my_remove(node_t** phead, int val);
 
 #endif

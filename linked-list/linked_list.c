@@ -58,3 +58,19 @@ void insert_sorted(node_t** phead, int val)
     new_node->next = *pp;
     *pp = new_node;
 }
+
+void my_remove(node_t** phead, int val)
+{
+    node_t** pp;
+
+    pp = phead;
+    while (*pp != NULL) {
+        if ((*pp)->value == val) {
+            node_t* tmp = *pp;
+            *pp = (*pp)->next;
+            free(tmp);
+            break;
+        }
+        pp = &(*pp)->next;
+    }
+}

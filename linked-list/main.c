@@ -19,6 +19,9 @@ int main(void)
     insert_sorted(&head, 2);
     print_node(head);
 
+    my_remove(&head, 6);
+    print_node(head);
+
     destroy(head);
     head = NULL;
 }

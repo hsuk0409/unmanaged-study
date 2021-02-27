@@ -1,0 +1,30 @@
+int solution(int A[], int N) 
+{
+    int startIndex = 0;
+    int i;
+    int sum;
+    int sumArr[N];
+    int sumIndex = 0;
+
+    for (i = 0; i < N; ++i) {
+        sum = 0;
+        if (A[i] < 0) {
+            ++startIndex;
+        }
+
+        while (startIndex < N && A[startIndex] >= 0) {
+            sum += A[startIndex++];
+        }
+        i = startIndex -1;
+        sumArr[sumIndex++] = sum;
+    }
+
+    sum = sumArr[0];
+    for (i = 1; i < sumIndex; ++i) {
+        if (sum < sumArr[i]) {
+            sum = sumArr[i];
+        }
+    }
+    
+    return sum;
+}

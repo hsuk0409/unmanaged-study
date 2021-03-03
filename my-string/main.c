@@ -44,6 +44,18 @@ int main(void)
         printf("hello to HELLO: %d\n\n\n", diff);
     }
 
+    {
+        char str[] = "Hi, my name is justin!";
+        char* token;
+        
+        token = strtok(str, ", ");
+        while (token != NULL) {
+            printf("token: %s\n", token);
+            token = strtok(NULL, ", !");
+        }
+        puts("");
+    }
+
     /* my_buffered_print test */
     buffered_print("Hello, ");
     buffered_print("Justin!. ");

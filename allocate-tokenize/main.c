@@ -3,27 +3,37 @@
 #include <stdlib.h>
 #include <assert.h>
 
-char** tokenize_malloc(char* str, const char* delims);
+char** tokenize_malloc(const char* str, const char* delims);
 
-char** tokenize_malloc(char* str, const char* delims)
+char** tokenize_malloc(const char* str, const char* delims)
 {
     char** result_pp;
-    char tmp_str[4096];
-    char* tmp_p;
+    char** tmp_pp;
+    char* tmp_str;
+    char* token;
+    size_t str_len = strlen(str);
+    size_t ret_size = 5;
     size_t i = 0;
     
     printf("[func] str: %s\n", str);
-    strncpy(tmp_str, str, strlen(str));
+    tmp_str = malloc((str_len + 1) * sizeof(char));
+    strcpy(tmp_str, str);
     
-    result_pp = malloc(sizeof(char*) * strlen(str));
-    tmp_p = strtok(tmp_str, delims);
-    while (tmp_p != NULL) {
-        /* result_pp = malloc(sizeof(char*)); */
-        result_pp[i] = malloc(strlen(tmp_p) + 1);
-        strncpy(result_pp[i++], tmp_p, strlen(tmp_p) + 1);
+    result_pp = malloc(sizeof(char*) * ret_size);
+
+    token = strtok(tmp_str, delims);
+    while (token != NULL) {
+        if (i == ret_size - 1) {
+            ret_size += 5;
+            tmp_pp = realloc(result_pp, sizeof(char*) * ret_size);
+            if (tmp_pp != NULL) {
+                result_pp = tmp_pp;
+            }
+        }
+        result_pp[i] = malloc(strlen(token) + 1);
+        strcpy(result_pp[i++], token);
         printf("[func] token pointer: %s\n", result_pp[i - 1]);
-        /* result_pp = realloc(result_pp, sizeof(char*) * i); */
-        tmp_p = strtok(NULL, delims);
+        token = strtok(NULL, delims);
     }
     result_pp[i] = NULL;
     printf("[func end] last token: %s\n", *result_pp);

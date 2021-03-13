@@ -56,6 +56,14 @@ int main(void)
         puts("");
     }
 
+    {
+        char str[] = "Hello world";
+        char* p;
+
+        p = str;
+        printf("pp: %s\n", p);
+    }
+
     /* my_buffered_print test */
     buffered_print("Hello, ");
     buffered_print("Justin!. ");

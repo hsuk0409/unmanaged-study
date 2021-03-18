@@ -2,9 +2,9 @@
 #include "getter_macro.h"
 #include "loop_macro.h"
 
-#define MAX(x, y) (x > y ? x : y)
+#define MAX(x, y) (((x) > (y)) ? x : y)
 
-#define MIN(x, y) (x > y ? y : x)
+#define MIN(x, y) (((x) > (y)) ? y : x)
 
 int main(void)
 {

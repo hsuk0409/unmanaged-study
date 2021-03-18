@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include "getter_macro.h"
+#include "loop_macro.h"
 
 #define MAX(x, y) (x > y ? x : y)
 
@@ -26,6 +27,13 @@ int main(void)
         team.hp = 10002;
 
         printf("%3d %6d %s\n", get_player_id(&team), get_player_hp(&team), get_player_name(&team));
+    }
+    
+    {
+        int val;
+        M_LOOP(val, 20, 25) {
+            printf("%d ", val);
+        }
     }
 
     return 0;

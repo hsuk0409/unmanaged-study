@@ -8,7 +8,6 @@ int main(void)
         size_t result;
 
         result = x + ~y + 1;
-
         printf("%d\n", result);
     }
 

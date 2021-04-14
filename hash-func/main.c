@@ -2,6 +2,8 @@
 #include <stdio.h>
 #include <string.h>
 
+#include "hashmap.h"
+
 size_t hash_int(int value)
 {
     return value;

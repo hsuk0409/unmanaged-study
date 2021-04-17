@@ -16,3 +16,16 @@ size_t hash_function(const char* key)
     }
     return code;
 }
+
+hashmap_t* init_hashmap_malloc(size_t length)
+{
+    hashmap_t* hashmap;
+    size_t i;
+    
+    hashmap = (node**)malloc(sizeof(node*) * length);
+    hashmap->length = length;
+    for (i = 0; i < length; ++i) {
+        hashmap->plist[i] = NULL;
+    }
+    return hashmap;
+}

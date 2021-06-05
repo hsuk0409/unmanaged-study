@@ -3,6 +3,7 @@
 
 #include "my_compare_string.h"
 #include "my_buffered_print.h"
+#include "my_reverse_str_study.h"
 
 void reverse_str_use_pointer(char* str);
 
@@ -23,6 +24,11 @@ void reverse_str_use_pointer(char* str)
 
 int main(void)
 {
+    {
+        char str[] = "Hi, My name is justin!!!!!";
+        my_reverse_str(str);
+        printf("my reverse str func result:: %s\n", str);
+    }
 
     {
         char str[] = "My name is justin!";

@@ -11,5 +11,6 @@ typedef struct node {
 void print_node(const node_t* head);
 void destroy(node_t* head);
 void insert_front(node_t** phead, int n);
+void remove_node(node_t** phead, int val);
 
 #endif

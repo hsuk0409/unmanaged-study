@@ -12,6 +12,10 @@ int main(void)
     
     print_node(head);
     
+    printf("\n");
+    remove_node(&head, 5);
+    print_node(head);
+
     destroy(head);
     head = NULL;
 }

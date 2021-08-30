@@ -14,6 +14,7 @@ size_t hash_function(const char* key)
     while (*c != '\0') {
         code += *c++;
     }
+
     return code;
 }
 
@@ -27,5 +28,6 @@ hashmap_t* init_hashmap_malloc(size_t length)
     for (i = 0; i < length; ++i) {
         hashmap->plist[i] = NULL;
     }
+
     return hashmap;
 }
